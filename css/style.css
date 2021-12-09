@@ -1,0 +1,55 @@
+body{
+    background: linear-gradient(to top, #a9eeff, #004a6d);
+    width: 100vw;
+    height: 100vh;
+}
+
+.card{
+    color: whitesmoke;
+    border-radius: 35px;
+    background: #004a6d71;
+    margin: 10px;
+    min-width: 408.86px;
+    min-height: 366px;
+}
+
+h1{
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: calc(1.275rem + .3vw);
+    line-height: inherit;
+}
+
+h2{
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: calc(1.275rem + .3vw);
+    line-height: inherit;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    flex-flow: wrap;
+}
+
+#temp{
+    color: whitesmoke;
+}
+
+#rcity{
+    color: whitesmoke;
+}
+
+#recent{
+    display: flex;
+}
+
+#tempGrid{
+    margin-left: 20px;
+}
