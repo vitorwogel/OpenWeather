@@ -21,6 +21,8 @@ function main(){
         const keybord = document.querySelector('input')
         const value = keybord.value
 
+        keybord.value = ''
+
         getApi(value, h, w, u, rtemp, rcity, ricon, cont)
         cont++
     })

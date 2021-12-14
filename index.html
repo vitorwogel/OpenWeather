@@ -33,13 +33,13 @@
                 <div class="d-flex">
                   <fieldset>
                     <legend>
-                      <h1>Open Weather</h1>
+                      <h1 data-cy="ow">Open Weather</h1>
                     </legend>
                     <form id="query">
                       <label>
                         <p style="display: inline;">City Name</p>
-                        <input type="text" form="query" maxlength="30">
-                        <button type="submit" class="btn btn-primary" id="search">
+                        <input id="city-name" data-cy="city-name" type="text" form="query" maxlength="30">
+                        <button type="submit" class="btn btn-primary" id="search" data-cy="search">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                           </svg>
@@ -74,15 +74,15 @@
                 </div>
 
                 <div id="cbot" class="d-flex flex-column mt-0 mb-0">
-                  <span id="rcity" class="medium">City Name</span>
+                  <span id="rcity" data-cy="rs-city" class="medium">City Name</span>
                   <div id="recent">
                     <h6 id="rtemp" class="display-4 mb-0"> 0°C </h6>
                     <div id="tempGrid" class="flex-grow-1" style="font-size: 1rem;">
-                      <div><i class="fas fa-wind fa-fw" style="color: whitesmoke;"></i> <span class="ms-1" id="i1"></span></div>
-                      <div><i class="fas fa-tint fa-fw" style="color: whitesmoke;"></i> <span class="ms-1" id="i2"></span></div>
-                      <div><i class="fas fa-sun fa-fw" style="color: whitesmoke;"></i> <span class="ms-1" id="i3"></span></div>
+                      <div><i data-cy="icon" class="fas fa-wind fa-fw" style="color: whitesmoke;"></i> <span class="ms-1" id="i1"></span></div>
+                      <div><i data-cy="icon" class="fas fa-tint fa-fw" style="color: whitesmoke;"></i> <span class="ms-1" id="i2"></span></div>
+                      <div><i data-cy="icon" class="fas fa-sun fa-fw" style="color: whitesmoke;"></i> <span class="ms-1" id="i3"></span></div>
                     </div>
-                    <div id="ricon" style="width: 100px; height: 100px;"></div>
+                    <div id="ricon" data-cy="icon" style="width: 100px; height: 100px;"></div>
                   </div>
                 </div>
               </div>

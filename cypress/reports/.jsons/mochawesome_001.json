@@ -1,0 +1,209 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-12-14T00:46:19.573Z",
+    "end": "2021-12-14T00:46:27.084Z",
+    "duration": 7511,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "61c09323-87b1-4666-a46f-f2acdb0245a2",
+      "title": "",
+      "fullFile": "cypress/integration/search-component/search-component.spec.js",
+      "file": "cypress/integration/search-component/search-component.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5a5ccd8e-a4e0-4a27-8b96-9ddf8c7a29ff",
+          "title": "Search Bar UI",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should return true when title component is correct",
+              "fullTitle": "Search Bar UI Should return true when title component is correct",
+              "timedOut": null,
+              "duration": 1408,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[data-cy=ow]').invoke('text').then($value => {\n  expect($value).to.eq(\"Open Weather\");\n});",
+              "err": {},
+              "uuid": "fc87929d-b0b9-4878-b0e2-795b5223b17a",
+              "parentUUID": "5a5ccd8e-a4e0-4a27-8b96-9ddf8c7a29ff",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should search some cities",
+              "fullTitle": "Search Bar UI Should search some cities",
+              "timedOut": null,
+              "duration": 2891,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\nconst city = ['Volta Redonda', 'Santa Rita do Sapucaí', 'Angra dos Reis', 'Rio de Janeiro'];\nfor (var i = 0; i < city.length; i++) {\n  cy.get('[data-cy=city-name]').type(city[i]);\n  cy.get('[data-cy=search]').click();\n  cy.contains(city[i]).should('to.have.length', 1);\n}",
+              "err": {},
+              "uuid": "b4f0840a-177c-4ec2-8ae3-446fc71e4b44",
+              "parentUUID": "5a5ccd8e-a4e0-4a27-8b96-9ddf8c7a29ff",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should search some cities with the name wrong",
+              "fullTitle": "Search Bar UI Should search some cities with the name wrong",
+              "timedOut": null,
+              "duration": 1907,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\nconst city = ['Voonda', 'Santucaí', 'Angris', 'Riiro'];\nfor (var i = 0; i < city.length; i++) {\n  cy.get('[data-cy=city-name]').type(city[i]);\n  cy.get('[data-cy=search]').click();\n  cy.contains(city[i]).should('to.have.length', 1);\n}",
+              "err": {},
+              "uuid": "29e44fd5-e595-4621-9642-475765b20abd",
+              "parentUUID": "5a5ccd8e-a4e0-4a27-8b96-9ddf8c7a29ff",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should press the button without any text",
+              "fullTitle": "Search Bar UI Should press the button without any text",
+              "timedOut": null,
+              "duration": 213,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\nconst value = '';\nif (cy.get('[data-cy=city-name]').invoke('text').then($value => {\n  expect($value).to.eq('');\n})) {\n  cy.get('[data-cy=search').click();\n}",
+              "err": {},
+              "uuid": "95e1adc3-3547-440e-8da5-85edfc175b8e",
+              "parentUUID": "5a5ccd8e-a4e0-4a27-8b96-9ddf8c7a29ff",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Returns true if city name already in recent cities",
+              "fullTitle": "Search Bar UI Returns true if city name already in recent cities",
+              "timedOut": null,
+              "duration": 827,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\search-component\\\\search-component.spec.js\\\\Search Bar UI -- Returns true if city name already in recent cities (failed).png\"\n      }\n    ]\n  ]\n}",
+              "code": "cy.visit('/');\nconst rj = 'Rio de Janeiro';\ncy.get('[data-cy=city-name]').type(rj);\ncy.get('[data-cy=search').click();\ncy.get('[data-cy=rs-city]').invoke('text').then($value => {\n  expect($value).to.eq(rj);\n});",
+              "err": {
+                "message": "AssertionError: expected 'City Name' to equal 'Rio de Janeiro'",
+                "estack": "AssertionError: expected 'City Name' to equal 'Rio de Janeiro'\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\search-component\\search-component.spec.js:142:25)",
+                "diff": "- 'City Name'\n+ 'Rio de Janeiro'\n"
+              },
+              "uuid": "d4b08b99-a728-440e-9e84-dcee572a8388",
+              "parentUUID": "5a5ccd8e-a4e0-4a27-8b96-9ddf8c7a29ff",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Returns true if icons are visible",
+              "fullTitle": "Search Bar UI Returns true if icons are visible",
+              "timedOut": null,
+              "duration": 159,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[data-cy=icon]').should('be.visible');",
+              "err": {},
+              "uuid": "fe36b64f-2a18-40c4-bdce-9f94c88c37ab",
+              "parentUUID": "5a5ccd8e-a4e0-4a27-8b96-9ddf8c7a29ff",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fc87929d-b0b9-4878-b0e2-795b5223b17a",
+            "b4f0840a-177c-4ec2-8ae3-446fc71e4b44",
+            "29e44fd5-e595-4621-9642-475765b20abd",
+            "95e1adc3-3547-440e-8da5-85edfc175b8e",
+            "fe36b64f-2a18-40c4-bdce-9f94c88c37ab"
+          ],
+          "failures": [
+            "d4b08b99-a728-440e-9e84-dcee572a8388"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 7405,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
